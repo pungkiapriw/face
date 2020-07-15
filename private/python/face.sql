@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2020 at 12:47 AM
+-- Generation Time: Jul 15, 2020 at 07:20 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -42,7 +42,12 @@ CREATE TABLE `absensi` (
 
 INSERT INTO `absensi` (`id`, `nim`, `status`, `created_at`, `updated_at`) VALUES
 (9, 16090022, 'hadir', '2020-06-26 21:27:19', '2020-06-26 21:27:19'),
-(12, 16090069, 'hadir', '2020-06-26 21:42:36', '2020-06-26 21:42:36');
+(12, 16090069, 'hadir', '2020-06-26 21:42:36', '2020-06-26 21:42:36'),
+(13, 16090022, 'hadir', '2020-07-14 11:07:59', '2020-07-14 11:07:59'),
+(14, 16090064, 'hadir', '2020-07-14 11:27:43', '2020-07-14 11:27:43'),
+(15, 16090103, 'hadir', '2020-07-14 12:47:29', '2020-07-14 12:47:29'),
+(16, 16090142, 'hadir', '2020-07-14 12:49:27', '2020-07-14 12:49:27'),
+(17, 16090022, 'hadir', '2020-07-15 04:59:03', '2020-07-15 04:59:03');
 
 -- --------------------------------------------------------
 
@@ -66,7 +71,10 @@ CREATE TABLE `mahasiswa` (
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `email`, `foto`, `created_at`, `updated_at`) VALUES
 (1, 16090069, 'ilyas abdurahman yusuf', 'andrenuryana@gmail.com', 'ucup.png', '2020-06-24 19:40:09', '2020-06-24 12:40:09'),
-(2, 16090022, 'Ery Supriadi', 'pungkiapriw@gmail.com', '16090022.png', '2020-06-26 20:10:18', '0000-00-00 00:00:00');
+(3, 16090022, 'Pungky Apri Wibowo', 'pungkiapriw@gmail.com', '16090022.jpg', '2020-07-14 04:05:15', '2020-07-14 04:05:15'),
+(5, 16090064, 'M Dimas Alief', 'bumiharja56@gmail.com', '16090064.jpg', '2020-07-14 04:26:41', '2020-07-14 04:26:41'),
+(9, 16090103, 'Dwiki S', 'supmarhernanda@gmail.com', '16090103.png', '2020-07-14 12:47:07', '0000-00-00 00:00:00'),
+(10, 16090142, 'afi makarim', 'afi.makarim12@gmail.com', '16090142.png', '2020-07-14 12:49:07', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -168,13 +176,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `migrations`
