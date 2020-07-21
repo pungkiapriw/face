@@ -14,7 +14,7 @@ class AbsensiController extends Controller
      */
     public function index()
     {
-        $data = absensi::whereRaw('created_at >= CURDATE() - INTERVAL 1 DAY')->get();
+        $data = absensi::whereRaw('date_format(created_at,"%Y-%m-%d")=curdate()')->get();
         return view('admin.absenview',compact('data'));
     }
 

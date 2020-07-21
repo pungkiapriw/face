@@ -15,10 +15,10 @@ mydb = mysql.connector.connect(
 currenttime = time.time()
 mycursor = mydb.cursor()
 # query="insert into mahasiswa (nim,nama,email,foto) values (%s,%s,%s,%s)"
-# val = ("16090069","ilyas abdurahman yusuf","andrenuryana@gmail.com","ucup.png")
+# val = ("16090022","Pungky Apri Wibowo","pungkiapriw@gmail.com","16090022.jpg")
 # mycursor.execute(query,val)
 # mydb.commit()
-video_capture = cv2.VideoCapture(0)
+video_capture = cv2.VideoCapture(1)
 
 	# Load a sample picture and learn how to recognize it.
 known_face_encodings = [
@@ -41,7 +41,7 @@ def update():
 	# PLEASE NOTE: This example requires OpenCV (the `cv2` library) to be installed only to read from your webcam.
 	# OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
 	# specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
-	video_capture = cv2.VideoCapture(0)
+	video_capture = cv2.VideoCapture(1)
 
 	# Load a sample picture and learn how to recognize it.
 	known_face_encodings = [
@@ -74,7 +74,7 @@ def main():
 	i=0
 	unknown_face = []
 
-	print('1. untuk membuka camera')
+	print('1. untuk absensi')
 	print('2. untuk training')
 	foto = int(input('masukan perintah : '))
 	print(foto)
@@ -176,7 +176,7 @@ def main():
 				cv2.putText(frame, name, (left + 6, bottom - 6), font, 0.5 , (255, 255, 255), 1)
 				if(name != 'unknown'):
 					mydb.commit()
-					query = "SELECT nim FROM absensi where nim = '{}' and created_at >= CURDATE()".format(name)
+					query = "SELECT nim FROM absensi where nim = '{}' and created_at >= CURDATE()".format(name,str('d'))
 					mycursor.execute(query)
 					hasil = mycursor.fetchall()
 					print(len(hasil))
@@ -185,9 +185,9 @@ def main():
 						values = (name,"hadir")
 						mycursor.execute(newQuery,values)
 						mydb.commit()
-						fromaddr = 'hidroponikapps@gmail.com'
+						fromaddr = 'pungkiapriw@gmail.com'
 						toaddrs  = email
-						hari = datetime.today().strftime('%Y-%m-%D')
+						hari = datetime.today().strftime('%Y-%m-%d').format(1)
 						msg = 'Hi, {} Anda sudah absen pada tanggal {}'.format(name,hari)
 						username = 'pungkiapriw@gmail.com'
 						password = 'iywgzzoovvpcwodt'

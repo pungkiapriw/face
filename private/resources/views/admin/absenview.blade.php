@@ -33,7 +33,7 @@
               <tr>
                 <td>{{$i}}</td>
                 <td>{{$item->nim}}</td>
-                <td>{{date_format($item->created_at,"d M Y  |  H:m a")}}</td>
+                <td>{{date_format($item->created_at,"d M Y  |  H:i a")}}</td>
                 <td> {{$item->status}}</td>
                 <td><a href="{{ url('absensi/'.$item->id.'/edit', []) }}"><i style="color:orange;"
                       class="fas fa-edit"></i></a></td>
