@@ -6,6 +6,7 @@ import mysql.connector
 import smtplib
 from datetime import datetime
 import time
+import re
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
@@ -18,7 +19,7 @@ mycursor = mydb.cursor()
 # val = ("16090022","Pungky Apri Wibowo","pungkiapriw@gmail.com","16090022.jpg")
 # mycursor.execute(query,val)
 # mydb.commit()
-video_capture = cv2.VideoCapture(1)
+video_capture = cv2.VideoCapture(0)
 
 	# Load a sample picture and learn how to recognize it.
 known_face_encodings = [
@@ -41,7 +42,7 @@ def update():
 	# PLEASE NOTE: This example requires OpenCV (the `cv2` library) to be installed only to read from your webcam.
 	# OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
 	# specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
-	video_capture = cv2.VideoCapture(1)
+	video_capture = cv2.VideoCapture(0)
 
 	# Load a sample picture and learn how to recognize it.
 	known_face_encodings = [
@@ -74,21 +75,29 @@ def main():
 	i=0
 	unknown_face = []
 
-	print('1. untuk absensi')
+	print('\n1. untuk absensi')
 	print('2. untuk training')
-	foto = int(input('masukan perintah : '))
+	foto = int(input('\nmasukan perintah : '))
 	print(foto)
 	if(foto==2):
-		print('training data...\n')
-		nim = input("Masukan nim kamu : ")
+		EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
+		NAMA_REGEX = re.compile(r"[A-Za-z]")
+		print('\ntraining data...\n')
+		nim = input("\nMasukan nim kamu : ")
 		QueryCek = "select * from mahasiswa where nim = {}".format(nim)
 		mycursor.execute(QueryCek)
 		result=mycursor.fetchall()
 		if(len(result)>0):
-			print("maaf nim tersebut sudah digunakan\n")
+			print("\nMaaf nim tersebut sudah digunakan!!\n")
 			main()
-		nama = input("Masukan nama kamu : ")
-		email = input("Masukan email kamu : ")
+		nama = input("\nMasukan nama kamu : ")
+		if not NAMA_REGEX.match(nama):
+			print("\nMaaf Nama Tidak Valid!!\n")
+			main()
+		email = input("\nMasukan email kamu : ")
+		if not EMAIL_REGEX.match(email):
+			print("\nMaaf Email Tidak Valid!!\n")
+			main()
 		print("\nUntuk ambil foto tekan Y  di keyboard satu kali ketika kamera muncul")
 		 # video capture source camera (Here webcam of laptop) 
 		ret, frame = video_capture.read() # return a single frame in variable `frame`

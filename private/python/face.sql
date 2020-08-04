@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2020 at 07:20 AM
+-- Generation Time: Aug 04, 2020 at 08:50 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -47,7 +47,23 @@ INSERT INTO `absensi` (`id`, `nim`, `status`, `created_at`, `updated_at`) VALUES
 (14, 16090064, 'hadir', '2020-07-14 11:27:43', '2020-07-14 11:27:43'),
 (15, 16090103, 'hadir', '2020-07-14 12:47:29', '2020-07-14 12:47:29'),
 (16, 16090142, 'hadir', '2020-07-14 12:49:27', '2020-07-14 12:49:27'),
-(17, 16090022, 'hadir', '2020-07-15 04:59:03', '2020-07-15 04:59:03');
+(17, 16090022, 'hadir', '2020-07-15 04:59:03', '2020-07-15 04:59:03'),
+(18, 16090022, 'hadir', '2020-07-16 09:48:05', '2020-07-16 09:48:05'),
+(34, 16090022, 'hadir', '2020-07-21 07:55:48', '2020-07-21 07:55:48'),
+(35, 16090082, 'hadir', '2020-07-21 10:14:57', '2020-07-21 10:14:57'),
+(36, 16090069, 'hadir', '2020-07-21 10:16:21', '2020-07-21 10:16:21'),
+(37, 16090069, 'hadir', '2020-07-23 14:06:23', '2020-07-23 14:06:23'),
+(40, 16090022, 'hadir', '2020-07-26 04:17:47', '2020-07-26 04:17:47'),
+(41, 16090039, 'hadir', '2020-07-30 07:14:31', '2020-07-30 07:14:31'),
+(42, 16090015, 'hadir', '2020-07-30 07:16:54', '2020-07-30 07:16:54'),
+(43, 16090022, 'hadir', '2020-07-30 07:17:13', '2020-07-30 07:17:13'),
+(44, 16090048, 'hadir', '2020-07-30 07:37:50', '2020-07-30 07:37:50'),
+(45, 16090069, 'hadir', '2020-07-30 07:39:38', '2020-07-30 07:39:38'),
+(46, 16090064, 'hadir', '2020-07-30 07:39:47', '2020-07-30 07:39:47'),
+(47, 16090103, 'hadir', '2020-07-30 07:41:03', '2020-07-30 07:41:03'),
+(48, 16090082, 'hadir', '2020-07-30 07:41:14', '2020-07-30 07:41:14'),
+(49, 16090051, 'hadir', '2020-07-30 07:48:05', '2020-07-30 07:48:05'),
+(50, 16090007, 'hadir', '2020-07-30 07:54:19', '2020-07-30 07:54:19');
 
 -- --------------------------------------------------------
 
@@ -74,7 +90,13 @@ INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `email`, `foto`, `created_at`, `up
 (3, 16090022, 'Pungky Apri Wibowo', 'pungkiapriw@gmail.com', '16090022.jpg', '2020-07-14 04:05:15', '2020-07-14 04:05:15'),
 (5, 16090064, 'M Dimas Alief', 'bumiharja56@gmail.com', '16090064.jpg', '2020-07-14 04:26:41', '2020-07-14 04:26:41'),
 (9, 16090103, 'Dwiki S', 'supmarhernanda@gmail.com', '16090103.png', '2020-07-14 12:47:07', '0000-00-00 00:00:00'),
-(10, 16090142, 'afi makarim', 'afi.makarim12@gmail.com', '16090142.png', '2020-07-14 12:49:07', '0000-00-00 00:00:00');
+(10, 16090142, 'afi makarim', 'afi.makarim12@gmail.com', '16090142.png', '2020-07-14 12:49:07', '0000-00-00 00:00:00'),
+(12, 16090082, 'dwi aji apriyadi', 'd.aji.apriyadi@gmail.com', '16090082.png', '2020-07-20 09:54:33', '0000-00-00 00:00:00'),
+(13, 16090039, 'Putri Alvina', 'putrilutfiani29@gmail.com', '16090039.png', '2020-07-30 07:13:51', '0000-00-00 00:00:00'),
+(14, 16090015, 'indah dwi jayanti', 'indahdj4@gmail.com', '16090015.png', '2020-07-30 07:16:24', '0000-00-00 00:00:00'),
+(15, 16090048, 'chandra', 'akanggebot12@gmail.com', '16090048.png', '2020-07-30 07:29:25', '0000-00-00 00:00:00'),
+(16, 16090051, 'lulu', 'lulualawiyah13@gmail.com', '16090051.png', '2020-07-30 07:47:30', '0000-00-00 00:00:00'),
+(17, 16090007, 'wahyuningsih', 'wahyuningsihamalia14@gmail.com', '16090007.png', '2020-07-30 07:53:43', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -108,6 +130,13 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('pungkiapriw@gmail.com', '$2y$10$qnUWZfkwy1GQM2.s3FQmmuQ6shrLbou.vgRuqMZGsqph0vRUyYq.O', '2020-07-20 05:39:19');
+
 -- --------------------------------------------------------
 
 --
@@ -130,7 +159,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'pungki apri wibowo', 'pungkiapriw@gmail.com', NULL, '$2y$10$OUHobRwoYieIvRhiN./SoOVOngo6pGAu0tvEpKNtJQK88mvBUMOeS', NULL, '2020-06-23 20:48:18', '2020-06-23 20:48:18');
+(1, 'pungki apri wibowo', 'pungkiapriw@gmail.com', NULL, '$2y$10$OUHobRwoYieIvRhiN./SoOVOngo6pGAu0tvEpKNtJQK88mvBUMOeS', NULL, '2020-06-23 20:48:18', '2020-06-23 20:48:18'),
+(2, 'kiki', 'kikiaw@gmail.com', NULL, '$2y$10$4yDsaMmdhTuj5qSOU6FxT./Vuxn9eoxW1mN15HiCPO1wvovgiHhze', NULL, '2020-07-20 05:34:32', '2020-07-20 05:34:32');
 
 --
 -- Indexes for dumped tables
@@ -176,13 +206,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -194,7 +224,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
